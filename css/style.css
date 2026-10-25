@@ -219,7 +219,8 @@ a.card:hover .card-t{color:var(--gold-hi)}
 /* ===== Внутренние страницы ===== */
 .page-hero{position:relative;min-height:clamp(420px,62vh,640px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
 .page-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,18,25,.7) 0%,rgba(15,18,25,.15) 30%,rgba(15,18,25,.55) 65%,var(--kiot) 100%)}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,18,25,.7) 0%,rgba(15,18,25,.15) 30%,rgba(15,18,25,.55) 62%,var(--kiot) 94%)}
+.page-hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--kiot);z-index:-1}
 .page-hero .wrap{width:100%;padding-top:130px;padding-bottom:clamp(32px,5vw,56px)}
 .page-plain{padding-top:120px}
 .crumbs{font-size:14.5px;color:var(--muted);margin:0 0 18px}
@@ -557,7 +558,7 @@ fieldset.field{border:0;padding:0;margin:0}
   --candle:linear-gradient(180deg,#e7c98c,#b98e4c);
   --btn-r:2px;
 }
-[data-palette=lazur]{--kiot:#0f1219;--kiot-2:#151a24;--kiot-3:#1d2431;--wine:#2a4a82;--gold:#c8ae84;--gold-hi:#ecdcbd;--gold-dim:rgba(200,174,132,.3);--line:rgba(200,174,132,.2);--fill:#2d5596;--fill-hover:#3766ad;--on-fill:#f1f5fb}
+[data-palette=lazur]{--kiot:#0f1219;--kiot-2:#151a24;--kiot-3:#1d2431;--wine:#2a4a82;--gold:#c8ae84;--gold-hi:#ecdcbd;--gold-dim:rgba(200,174,132,.3);--line:rgba(200,174,132,.2);--fill:#8f2733;--fill-hover:#a3303d;--on-fill:#f5e9dc}
 [data-palette=lazur] body::before{background:radial-gradient(1200px 700px at 85% -10%,rgba(60,105,180,.14),transparent 60%),radial-gradient(900px 600px at -10% 110%,rgba(45,85,150,.16),transparent 60%)}
 [data-palette=garnet]{--gold:#c7a68a;--gold-hi:#ead8c6;--gold-dim:rgba(199,166,138,.3);--line:rgba(199,166,138,.2);--fill:#8f2733;--fill-hover:#a3303d;--on-fill:#f5e9dc}
 [data-palette=champagne]{--gold:#d0bf9f;--gold-hi:#f1e7d4;--gold-dim:rgba(208,191,159,.3);--line:rgba(208,191,159,.18);--fill:#f1e7d4;--fill-hover:#fff6e6;--on-fill:#1b1311}

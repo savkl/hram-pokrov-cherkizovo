@@ -155,15 +155,16 @@
   });
 
   /* ---------- Фото-арки раскрываются снизу, как окно ---------- */
-  $$(".card-img, .about-a, .about-b, .help-img, .shrine img, .wide-photo, .aside img, .prose figure img").forEach(function (el) {
+  $$(".card-img, .about-a, .about-b, .help-img, .shrine img, .wide-photo, .aside img, .prose figure img, .person-img").forEach(function (el) {
     var img = el.tagName === "IMG" ? null : el.querySelector("img");
     var tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 90%", once: true } });
-    tl.fromTo(el, { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.5, ease: "expo.inOut" });
-    if (img) tl.fromTo(img, { scale: 1.35 }, { scale: 1, duration: 2, ease: "expo.out" }, 0.15);
+    // шторка открывается сбоку, фото чуть съезжает навстречу — быстро и мягко
+    tl.fromTo(el, { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: .85, ease: "power3.out" });
+    if (img) tl.fromTo(img, { scale: 1.12, xPercent: -6 }, { scale: 1, xPercent: 0, duration: 1.1, ease: "power3.out" }, 0);
   });
 
   /* ---------- Остальные блоки появляются волной ---------- */
-  ST.batch(".task, .soc-card, .row, .reg, .trip, .person, .feast-list li, .news-card, .gallery a, .about-text > *, .card-t, .card p, .cs-item, .c-block, .qr-wrap, .req, .icon-groups li, .note", {
+  ST.batch(".task, .soc-card, .row, .reg, .trip, .person, .feast-list li, .news-card, .gallery a, .about-text > :not(.h2), .card-t, .card p, .cs-item, .c-block, .qr-wrap, .req, .icon-groups li, .note", {
     start: "top 92%", once: true,
     onEnter: function (els) { gsap.fromTo(els, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, stagger: .08, ease: "expo.out", overwrite: true }); }
   });
